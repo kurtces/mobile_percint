@@ -13,17 +13,21 @@ class I18nLocalizations {
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
       'title': 'Child Growth Calculator',
+      'empty': '',
       'tab_main': 'Main',
       'tab_settings': 'Settings',
       'tab_help': 'Help',
-      'tab_about': 'About'
+      'tab_about': 'About',
+      'about_body_text': 'Developed by SyssLab - 2018',
     },
     'es': {
       'title': 'Percentiles Infantiles',
+      'empty': '',
       'tab_main': 'Principal',
       'tab_settings': 'Opciones',
       'tab_help': 'Ayuda',
-      'tab_about': 'Acerca de'
+      'tab_about': 'Acerca de',
+      'about_body_text': 'Desarrollado por SyssLab - 2018',
     },
   };
   String get title {

@@ -65,7 +65,23 @@ class MyHomePage extends StatelessWidget {
               new Icon(Icons.child_care),
               new Icon(Icons.settings), // settings_applications
               new Icon(Icons.help), // help_outline | live_help
-              new Icon(Icons.bubble_chart),
+              new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  new Text(I18nLocalizations.of(context).title),
+                  new Text(I18nLocalizations.of(context).empty),
+                  new Text('Developed by SyssLab - 2018', style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)),
+                  /*
+                  new Expanded(
+                    child: new FittedBox(
+                      fit: BoxFit.contain, // otherwise the logo will be tiny
+                      child: const FlutterLogo(),
+                    ),
+                  ),
+                  */
+                ],
+              ),
             ],
           ),
         ),

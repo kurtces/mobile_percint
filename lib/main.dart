@@ -41,13 +41,43 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(I18nLocalizations.of(context).title),
-      ),
-      body: new Center(
-        child: new Text(I18nLocalizations.of(context).title),
+    return new MaterialApp(
+      home: new DefaultTabController(
+        length: 3, // The number of tabs / content sections we need to display
+        child: new Scaffold(
+          appBar: new AppBar(
+            bottom: new TabBar(
+              tabs: [
+                new Tab(icon: new Icon(Icons.child_care), // child_friendly
+                        text:new Text(I18nLocalizations.of(context).tab_main)),
+                new Tab(icon: new Icon(Icons.settings), // settings_applications
+                        text:new Text(I18nLocalizations.of(context).tab_settings)),
+                new Tab(icon: new Icon(Icons.help), // help_outline | live_help
+                        text:new Text(I18nLocalizations.of(context).tab_help)),
+                new Tab(icon: new Icon(Icons.bubble_chart),
+                        text:new Text(I18nLocalizations.of(context).tab_about)),
+              ],
+            ),
+            title: new Text(I18nLocalizations.of(context).title),
+          ),
+          body: new TabBarView(
+            children: [
+              new Icon(Icons.child_care),
+              new Icon(Icons.settings), // settings_applications
+              new Icon(Icons.help), // help_outline | live_help
+              new Icon(Icons.bubble_chart),
+            ],
+          ),
+        ),
       ),
     );
+    //return new Scaffold(
+    //  appBar: new AppBar(
+    //    title: new Text(I18nLocalizations.of(context).title),
+    //  ),
+    //  body: new Center(
+    //  child: new Text(I18nLocalizations.of(context).title),
+    //),
+    //);
   }
 }

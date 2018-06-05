@@ -12,12 +12,18 @@ class I18nLocalizations {
 
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
-      'title': 'App title',
-      'googleLogin': 'Login with Google'
+      'title': 'Child Growth Calculator',
+      'tab_main': 'Main',
+      'tab_settings': 'Settings',
+      'tab_help': 'Help',
+      'tab_about': 'About'
     },
     'es': {
-      'title': 'Título de App',
-      'googleLogin': 'Conectar con Google'
+      'title': 'Percentiles Infantiles',
+      'tab_main': 'Principal',
+      'tab_settings': 'Opciones',
+      'tab_help': 'Ayuda',
+      'tab_about': 'Acerca de'
     },
   };
   String get title {

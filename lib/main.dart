@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mobile_percint/i18n/i18n.dart';
+import 'package:mobile_percint/pages/about_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -65,24 +66,7 @@ class MyHomePage extends StatelessWidget {
               new Icon(Icons.child_care),
               new Icon(Icons.settings), // settings_applications
               new Icon(Icons.help), // help_outline | live_help
-              new Column(
-                crossAxisAlignment: CrossAxisAlignment.center, // start
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  new Text(I18nLocalizations.of(context).empty),
-                  new Text(I18nLocalizations.of(context).title),
-                  new Text(I18nLocalizations.of(context).empty),
-                  new Text(I18nLocalizations.of(context).about_body_text),//,
-                      //style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)),
-                  /**/
-                  new Expanded(
-                    child: new FittedBox(
-                      fit: BoxFit.contain, // otherwise the logo will be tiny
-                      child: const FlutterLogo(),
-                    ),
-                  ),
-                ],
-              ),
+              new AboutPage(),
             ],
           ),
         ),

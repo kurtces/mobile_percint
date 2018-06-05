@@ -43,19 +43,19 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new DefaultTabController(
-        length: 3, // The number of tabs / content sections we need to display
+        length: 4, // The number of tabs / content sections we need to display
         child: new Scaffold(
           appBar: new AppBar(
             bottom: new TabBar(
               tabs: [
                 new Tab(icon: new Icon(Icons.child_care), // child_friendly
-                        text:new Text(I18nLocalizations.of(context).tab_main)),
+                        text: I18nLocalizations.of(context).tab_main),
                 new Tab(icon: new Icon(Icons.settings), // settings_applications
-                        text:new Text(I18nLocalizations.of(context).tab_settings)),
+                        text: I18nLocalizations.of(context).tab_settings),
                 new Tab(icon: new Icon(Icons.help), // help_outline | live_help
-                        text:new Text(I18nLocalizations.of(context).tab_help)),
+                        text: I18nLocalizations.of(context).tab_help),
                 new Tab(icon: new Icon(Icons.bubble_chart),
-                        text:new Text(I18nLocalizations.of(context).tab_about)),
+                        text: I18nLocalizations.of(context).tab_about),
               ],
             ),
             title: new Text(I18nLocalizations.of(context).title),
@@ -66,20 +66,21 @@ class MyHomePage extends StatelessWidget {
               new Icon(Icons.settings), // settings_applications
               new Icon(Icons.help), // help_outline | live_help
               new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center, // start
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
+                  new Text(I18nLocalizations.of(context).empty),
                   new Text(I18nLocalizations.of(context).title),
                   new Text(I18nLocalizations.of(context).empty),
-                  new Text('Developed by SyssLab - 2018', style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)),
-                  /*
+                  new Text(I18nLocalizations.of(context).about_body_text),//,
+                      //style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0)),
+                  /**/
                   new Expanded(
                     child: new FittedBox(
                       fit: BoxFit.contain, // otherwise the logo will be tiny
                       child: const FlutterLogo(),
                     ),
                   ),
-                  */
                 ],
               ),
             ],
@@ -87,13 +88,5 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
     );
-    //return new Scaffold(
-    //  appBar: new AppBar(
-    //    title: new Text(I18nLocalizations.of(context).title),
-    //  ),
-    //  body: new Center(
-    //  child: new Text(I18nLocalizations.of(context).title),
-    //),
-    //);
   }
 }

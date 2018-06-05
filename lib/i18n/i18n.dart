@@ -33,8 +33,23 @@ class I18nLocalizations {
   String get title {
     return _localizedValues[locale.languageCode]['title'];
   }
-  String get googleLogin {
-    return _localizedValues[locale.languageCode]['googleLogin'];
+  String get empty {
+    return _localizedValues[locale.languageCode]['empty'];
+  }
+  String get tab_main {
+    return _localizedValues[locale.languageCode]['tab_main'];
+  }
+  String get tab_settings {
+    return _localizedValues[locale.languageCode]['tab_settings'];
+  }
+  String get tab_help {
+    return _localizedValues[locale.languageCode]['tab_help'];
+  }
+  String get tab_about {
+    return _localizedValues[locale.languageCode]['tab_about'];
+  }
+  String get about_body_text {
+    return _localizedValues[locale.languageCode]['about_body_text'];
   }
 }
 

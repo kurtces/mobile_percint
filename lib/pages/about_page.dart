@@ -6,7 +6,6 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      /*
       localizationsDelegates: [
         const I18nLocalizationsDelegate(),
         // ... app-specific localization delegate[s] here
@@ -18,7 +17,6 @@ class AboutPage extends StatelessWidget {
         const Locale('es', 'ES'), // Spanish
         // ... other locales the app supports
       ],
-      */
       home: new Column(
         crossAxisAlignment: CrossAxisAlignment.center, // start
         mainAxisSize: MainAxisSize.min,

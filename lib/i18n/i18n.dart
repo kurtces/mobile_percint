@@ -1,9 +1,10 @@
 import 'dart:async' show Future;
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/material.dart';
 
 class I18nLocalizations {
   I18nLocalizations(this.locale);
+
   final Locale locale;
 
   static I18nLocalizations of(BuildContext context) {
@@ -34,30 +35,39 @@ class I18nLocalizations {
       'flaticon_url': 'https://www.flaticon.com',
     },
   };
+
   String get title {
     return _localizedValues[locale.languageCode]['title'];
   }
+
   String get empty {
     return _localizedValues[locale.languageCode]['empty'];
   }
+
   String get tab_main {
     return _localizedValues[locale.languageCode]['tab_main'];
   }
+
   String get tab_settings {
     return _localizedValues[locale.languageCode]['tab_settings'];
   }
+
   String get tab_help {
     return _localizedValues[locale.languageCode]['tab_help'];
   }
+
   String get tab_about {
     return _localizedValues[locale.languageCode]['tab_about'];
   }
+
   String get about_body_text {
     return _localizedValues[locale.languageCode]['about_body_text'];
   }
+
   String get flaticon_license_text {
     return _localizedValues[locale.languageCode]['flaticon_license_text'];
   }
+
   String get flaticon_url {
     return _localizedValues[locale.languageCode]['flaticon_url'];
   }
@@ -71,8 +81,6 @@ class I18nLocalizationsDelegate extends LocalizationsDelegate<I18nLocalizations>
 
   @override
   Future<I18nLocalizations> load(Locale locale) {
-    // Returning a SynchronousFuture here because an async "load" operation
-    // isn't needed to produce an instance of DemoLocalizations.
     return new SynchronousFuture<I18nLocalizations>(new I18nLocalizations(locale));
   }
 

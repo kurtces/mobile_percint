@@ -12,17 +12,16 @@ class AboutPage extends StatelessWidget {
           style: new TextStyle(fontWeight: FontWeight.bold),),
         new Text(I18nLocalizations.of(context).title),
         new Text(I18nLocalizations.of(context).empty),
-        new Expanded(
-          child: new FittedBox(
-            fit: BoxFit.contain, // otherwise the logo will be tiny
-            child: const FlutterLogo(),
-          ),
+        new Image.asset(
+          'assets/logo.png',
+          height: 240.0,
+          fit: BoxFit.cover,
         ),
         new Text(I18nLocalizations.of(context).empty),
         new Text(I18nLocalizations.of(context).about_body_text),
         new Text(I18nLocalizations.of(context).empty),
         new Text(I18nLocalizations.of(context).flaticon_license_text),
-        new Text(I18nLocalizations.of(context).empty),
+        new Text(I18nLocalizations.of(context).flaticon_license_text_2),
         new Text(I18nLocalizations.of(context).flaticon_url),
         new Text(I18nLocalizations.of(context).empty),
       ],

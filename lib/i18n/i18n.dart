@@ -20,8 +20,9 @@ class I18nLocalizations {
       'tab_help': 'Help',
       'tab_about': 'About',
       'about_body_text': 'Developed by SyssLab - 2018',
-      'flaticon_license_text': 'Icons designed by Smashicons from Flaticon',
-      'flaticon_url': 'https://www.flaticon.com',
+      'flaticon_license_text': 'Icons designed by Smashicons and Freepik',
+      'flaticon_license_text_2': '(http://www.freepik.com)',
+      'flaticon_url': 'from Flaticon (https://www.flaticon.com)',
     },
     'es': {
       'title': 'Percentiles Infantiles',
@@ -31,8 +32,9 @@ class I18nLocalizations {
       'tab_help': 'Ayuda',
       'tab_about': 'Acerca de',
       'about_body_text': 'Desarrollado por SyssLab - 2018',
-      'flaticon_license_text': 'Icons designed by Smashicons from Flaticon',
-      'flaticon_url': 'https://www.flaticon.com',
+      'flaticon_license_text': 'Icons designed by Smashicons and Freepik',
+      'flaticon_license_text_2': '(http://www.freepik.com)',
+      'flaticon_url': 'from Flaticon (https://www.flaticon.com)',
     },
   };
 
@@ -66,6 +68,10 @@ class I18nLocalizations {
 
   String get flaticon_license_text {
     return _localizedValues[locale.languageCode]['flaticon_license_text'];
+  }
+
+  String get flaticon_license_text_2 {
+    return _localizedValues[locale.languageCode]['flaticon_license_text_2'];
   }
 
   String get flaticon_url {

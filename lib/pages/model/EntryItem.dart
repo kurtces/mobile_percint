@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_percint/pages/aux/Entry.dart';
+import 'package:mobile_percint/pages/model/Entry.dart';
 
 // Displays one Entry. If the entry has children then it's displayed
 // with an ExpansionTile.

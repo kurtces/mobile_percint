@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_percint/pages/aux/Entry.dart';
-import 'package:mobile_percint/pages/aux/EntryItem.dart';
+import 'package:mobile_percint/pages/model/Entry.dart';
+import 'package:mobile_percint/pages/model/EntryItem.dart';
 
 class HelpPage extends StatelessWidget {
   @override

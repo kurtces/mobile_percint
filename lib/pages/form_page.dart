@@ -10,6 +10,9 @@ class FormPageState extends State<FormPage> {
   final scaffoldKey = new GlobalKey<ScaffoldState>();
   final formKey = new GlobalKey<FormState>();
 
+  final RegExp agePattern = new RegExp(r'0-9');
+
+  int genderValue = 0;
   String _email;
   String _password;
 
@@ -39,7 +42,7 @@ class FormPageState extends State<FormPage> {
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
-        title: new Text('Validating forms'),
+        title: new Text(I18nLocalizations.of(context).form_title_text),
       ),
       body: new Padding(
         padding: const EdgeInsets.all(16.0),
@@ -47,18 +50,42 @@ class FormPageState extends State<FormPage> {
           key: formKey,
           child: new Column(
             children: [
-              new TextFormField(
-                decoration: new InputDecoration(labelText: 'Email'),
-                validator: (val) =>
-                !val.contains('@') ? I18nLocalizations.of(context).title : null, // 'Not a valid email.'
-                onSaved: (val) => _email = val,
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  //new Text(I18nLocalizations.of(context).form_gender_text),
+                  new Text(I18nLocalizations.of(context).form_male_text),
+                  new Radio<int>(
+                      value: 0,
+                      groupValue: genderValue,
+                      onChanged: handleGenderValueChanged,
+                      activeColor: Colors.blue,
+                  ),
+                  new Text(I18nLocalizations.of(context).form_female_text),
+                  new Radio<int>(
+                      value: 1,
+                      groupValue: genderValue,
+                      onChanged: handleGenderValueChanged,
+                      activeColor: Colors.blue,
+                  ),
+                ],
               ),
-              new TextFormField(
-                decoration: new InputDecoration(labelText: 'Password'),
-                validator: (val) =>
-                val.length < 6 ? I18nLocalizations.of(context).title : null,  // 'Password too short.'
-                onSaved: (val) => _password = val,
-                obscureText: true,
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  /*
+                  new TextFormField(
+                    decoration: new InputDecoration(labelText: I18nLocalizations.of(context).form_age_text),
+                    initialValue: I18nLocalizations.of(context).form_age_initial_value,
+                    autocorrect: false,
+                    autovalidate: true,
+                    validator: (val) => val.isNotEmpty ? I18nLocalizations.of(context).form_age_error_text : null,
+                    onSaved: (val) => _email = val,
+                  ),
+                  */
+                ],
               ),
               new RaisedButton(
                 onPressed: _submit,
@@ -69,5 +96,11 @@ class FormPageState extends State<FormPage> {
         ),
       ),
     );
+  }
+
+  void handleGenderValueChanged(int value) {
+    setState(() {
+      genderValue = value;
+    });
   }
 }

@@ -20,9 +20,9 @@ class AboutPage extends StatelessWidget {
         new Text(I18nLocalizations.of(context).empty),
         new Text(I18nLocalizations.of(context).about_body_text),
         new Text(I18nLocalizations.of(context).empty),
-        new Text(I18nLocalizations.of(context).flaticon_license_text),
-        new Text(I18nLocalizations.of(context).flaticon_license_text_2),
-        new Text(I18nLocalizations.of(context).flaticon_url),
+        new Text(I18nLocalizations.of(context).about_flaticon_license_text),
+        new Text(I18nLocalizations.of(context).about_flaticon_license_text_2),
+        new Text(I18nLocalizations.of(context).about_flaticon_url),
         new Text(I18nLocalizations.of(context).empty),
       ],
     );

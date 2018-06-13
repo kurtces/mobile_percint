@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // ... other locales the app supports
       ],
       theme: new ThemeData(
-        primarySwatch: Colors.green,//blue,
+        primarySwatch: Colors.green,
       ),
       home: new HomeApp(),
     );

@@ -19,10 +19,17 @@ class I18nLocalizations {
       'tab_settings': 'Settings',
       'tab_help': 'Help',
       'tab_about': 'About',
+      'form_title_text': 'Enter Data:',
+      'form_gender_text': 'Gender:   ',
+      'form_male_text': 'Boy',
+      'form_female_text': 'Girl',
+      'form_age_text': 'Age',
+      'form_age_initial_value': '6',
+      'form_age_error_text': 'Please enter a valid age.',
       'about_body_text': 'Developed by SyssLab - 2018',
-      'flaticon_license_text': 'Icons designed by Smashicons and Freepik',
-      'flaticon_license_text_2': '(http://www.freepik.com)',
-      'flaticon_url': 'from Flaticon (https://www.flaticon.com)',
+      'about_flaticon_license_text': 'Icons designed by Smashicons and Freepik',
+      'about_flaticon_license_text_2': '(http://www.freepik.com)',
+      'about_flaticon_url': 'from Flaticon (https://www.flaticon.com)',
     },
     'es': {
       'title': 'Percentiles Infantiles',
@@ -31,10 +38,17 @@ class I18nLocalizations {
       'tab_settings': 'Opciones',
       'tab_help': 'Ayuda',
       'tab_about': 'Acerca de',
+      'form_title_text': 'Introduce los datos:',
+      'form_gender_text': 'Género:   ',
+      'form_male_text': 'Niño',
+      'form_female_text': 'Niña',
+      'form_age_text': 'Edad',
+      'form_age_initial_value': '6',
+      'form_age_error_text': 'Por favor, introduce una edad válida.',
       'about_body_text': 'Desarrollado por SyssLab - 2018',
-      'flaticon_license_text': 'Icons designed by Smashicons and Freepik',
-      'flaticon_license_text_2': '(http://www.freepik.com)',
-      'flaticon_url': 'from Flaticon (https://www.flaticon.com)',
+      'about_flaticon_license_text': 'Icons designed by Smashicons and Freepik',
+      'about_flaticon_license_text_2': '(http://www.freepik.com)',
+      'about_flaticon_url': 'from Flaticon (https://www.flaticon.com)',
     },
   };
 
@@ -62,20 +76,48 @@ class I18nLocalizations {
     return _localizedValues[locale.languageCode]['tab_about'];
   }
 
+  String get form_title_text {
+    return _localizedValues[locale.languageCode]['form_title_text'];
+  }
+
+  String get form_gender_text {
+    return _localizedValues[locale.languageCode]['form_gender_text'];
+  }
+
+  String get form_male_text {
+    return _localizedValues[locale.languageCode]['form_male_text'];
+  }
+
+  String get form_female_text {
+    return _localizedValues[locale.languageCode]['form_female_text'];
+  }
+
+  String get form_age_text {
+    return _localizedValues[locale.languageCode]['form_age_text'];
+  }
+
+  String get form_age_initial_value {
+    return _localizedValues[locale.languageCode]['form_age_initial_value'];
+  }
+
+  String get form_age_error_text {
+    return _localizedValues[locale.languageCode]['form_age_error_text'];
+  }
+
   String get about_body_text {
     return _localizedValues[locale.languageCode]['about_body_text'];
   }
 
-  String get flaticon_license_text {
-    return _localizedValues[locale.languageCode]['flaticon_license_text'];
+  String get about_flaticon_license_text {
+    return _localizedValues[locale.languageCode]['about_flaticon_license_text'];
   }
 
-  String get flaticon_license_text_2 {
-    return _localizedValues[locale.languageCode]['flaticon_license_text_2'];
+  String get about_flaticon_license_text_2 {
+    return _localizedValues[locale.languageCode]['about_flaticon_license_text_2'];
   }
 
-  String get flaticon_url {
-    return _localizedValues[locale.languageCode]['flaticon_url'];
+  String get about_flaticon_url {
+    return _localizedValues[locale.languageCode]['about_flaticon_url'];
   }
 }
 

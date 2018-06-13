@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_percint/i18n/i18n.dart';
 
@@ -10,11 +11,14 @@ class FormPageState extends State<FormPage> {
   final scaffoldKey = new GlobalKey<ScaffoldState>();
   final formKey = new GlobalKey<FormState>();
 
-  final RegExp agePattern = new RegExp(r'0-9');
+  final List<String> ageTypes = const <String>[
+    'Sarcoline', 'Coquelicot', 'Smaragdine'
+  ];
+  final double _kPickerItemHeight = 32.0;
 
   int genderValue = 0;
-  String _email;
-  String _password;
+  String age;
+  int ageTypeSelected;
 
   void _submit() {
     final form = formKey.currentState;
@@ -22,16 +26,15 @@ class FormPageState extends State<FormPage> {
     if (form.validate()) {
       form.save();
 
-      // Email & password matched our validation rules
-      // and are saved to _email and _password fields.
-      _performLogin();
+      // Let's generate child growth charts from data introduced...
+      generateCharts();
     }
   }
 
-  void _performLogin() {
-    // This is just a demo, so no actual login here.
+  void generateCharts() {
+    // TODO This is just a demo, so no actual login here.
     final snackbar = new SnackBar(
-      content: new Text('Email: $_email, password: $_password'),
+      content: new Text('Email: $age'),
     );
 
     scaffoldKey.currentState.showSnackBar(snackbar);
@@ -39,6 +42,8 @@ class FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
+    //final FixedExtentScrollController scrollController = new FixedExtentScrollController(initialItem: ageTypeSelected);
+
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
@@ -75,21 +80,37 @@ class FormPageState extends State<FormPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  /*
-                  new TextFormField(
-                    decoration: new InputDecoration(labelText: I18nLocalizations.of(context).form_age_text),
-                    initialValue: I18nLocalizations.of(context).form_age_initial_value,
-                    autocorrect: false,
-                    autovalidate: true,
-                    validator: (val) => val.isNotEmpty ? I18nLocalizations.of(context).form_age_error_text : null,
-                    onSaved: (val) => _email = val,
+                  new Flexible( // Expanded(
+                      child: new Column(
+                        children: <Widget>[
+                          new TextFormField(
+                            decoration: new InputDecoration(labelText: I18nLocalizations.of(context).form_age_text),
+                            initialValue: I18nLocalizations.of(context).form_age_initial_value,
+                            autocorrect: false,
+                            autovalidate: true,
+                            validator: (val) => val.isNotEmpty ? null : I18nLocalizations.of(context).form_age_error_text,
+                            onSaved: (val) => age = val,
+                          ),
+                          new Radio<int>(
+                            value: 0,
+                            groupValue: genderValue,
+                            onChanged: handleGenderValueChanged,
+                            activeColor: Colors.blue,
+                          ),
+                        ],
+                      ),
                   ),
-                  */
                 ],
               ),
-              new RaisedButton(
-                onPressed: _submit,
-                child: new Text('Login'),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  new RaisedButton(
+                    onPressed: _submit,
+                    child: new Text('Login'),
+                  ),
+                ]
               ),
             ],
           ),

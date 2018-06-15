@@ -25,6 +25,9 @@ class I18nLocalizations {
       'form_female_text': 'Girl',
       'form_age_text': 'Age',
       'form_age_initial_value': '6',
+      'form_age_weeks_text': 'Weeks',
+      'form_age_months_text': 'Months',
+      'form_age_years_text': 'Years',
       'form_age_error_text': 'Please enter a valid age.',
       'about_body_text': 'Developed by SyssLab - 2018',
       'about_flaticon_license_text': 'Icons designed by Smashicons and Freepik',
@@ -44,6 +47,9 @@ class I18nLocalizations {
       'form_female_text': 'Niña',
       'form_age_text': 'Edad',
       'form_age_initial_value': '6',
+      'form_age_weeks_text': 'Semanas',
+      'form_age_months_text': 'Meses',
+      'form_age_years_text': 'Años',
       'form_age_error_text': 'Por favor, introduce una edad válida.',
       'about_body_text': 'Desarrollado por SyssLab - 2018',
       'about_flaticon_license_text': 'Icons designed by Smashicons and Freepik',
@@ -98,6 +104,18 @@ class I18nLocalizations {
 
   String get form_age_initial_value {
     return _localizedValues[locale.languageCode]['form_age_initial_value'];
+  }
+
+  String get form_age_weeks_text {
+    return _localizedValues[locale.languageCode]['form_age_weeks_text'];
+  }
+
+  String get form_age_months_text {
+    return _localizedValues[locale.languageCode]['form_age_months_text'];
+  }
+
+  String get form_age_years_text {
+    return _localizedValues[locale.languageCode]['form_age_years_text'];
   }
 
   String get form_age_error_text {

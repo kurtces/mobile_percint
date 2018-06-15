@@ -18,7 +18,7 @@ class FormPageState extends State<FormPage> {
 
   int genderValue = 0;
   String age;
-  int ageTypeSelected;
+  int ageTypeSelected = 0;
 
   void _submit() {
     final form = formKey.currentState;
@@ -42,8 +42,6 @@ class FormPageState extends State<FormPage> {
 
   @override
   Widget build(BuildContext context) {
-    //final FixedExtentScrollController scrollController = new FixedExtentScrollController(initialItem: ageTypeSelected);
-
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
@@ -55,11 +53,12 @@ class FormPageState extends State<FormPage> {
           key: formKey,
           child: new Column(
             children: [
+              // Gender selection.
               new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
+                //mainAxisAlignment: MainAxisAlignment.center,
+                //mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  //new Text(I18nLocalizations.of(context).form_gender_text),
+                  new Text(I18nLocalizations.of(context).form_gender_text),
                   new Text(I18nLocalizations.of(context).form_male_text),
                   new Radio<int>(
                       value: 0,
@@ -76,6 +75,7 @@ class FormPageState extends State<FormPage> {
                   ),
                 ],
               ),
+              // Age selection.
               new Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -91,11 +91,32 @@ class FormPageState extends State<FormPage> {
                             validator: (val) => val.isNotEmpty ? null : I18nLocalizations.of(context).form_age_error_text,
                             onSaved: (val) => age = val,
                           ),
-                          new Radio<int>(
-                            value: 0,
-                            groupValue: genderValue,
-                            onChanged: handleGenderValueChanged,
-                            activeColor: Colors.blue,
+                          new Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              new Text(I18nLocalizations.of(context).form_age_weeks_text),
+                              new Radio<int>(
+                                value: 0,
+                                groupValue: ageTypeSelected,
+                                onChanged: handleAgeTypeValueChanged,
+                                activeColor: Colors.blue,
+                              ),
+                              new Text(I18nLocalizations.of(context).form_age_months_text),
+                              new Radio<int>(
+                                value: 1,
+                                groupValue: ageTypeSelected,
+                                onChanged: handleAgeTypeValueChanged,
+                                activeColor: Colors.blue,
+                              ),
+                              new Text(I18nLocalizations.of(context).form_age_years_text),
+                              new Radio<int>(
+                                value: 2,
+                                groupValue: ageTypeSelected,
+                                onChanged: handleAgeTypeValueChanged,
+                                activeColor: Colors.blue,
+                              ),
+                            ]
                           ),
                         ],
                       ),
@@ -122,6 +143,12 @@ class FormPageState extends State<FormPage> {
   void handleGenderValueChanged(int value) {
     setState(() {
       genderValue = value;
+    });
+  }
+
+  void handleAgeTypeValueChanged(int value) {
+    setState(() {
+      ageTypeSelected = value;
     });
   }
 }
